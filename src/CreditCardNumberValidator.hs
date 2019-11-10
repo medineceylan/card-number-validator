@@ -16,8 +16,8 @@ sumDigits = sum . map (sum . toDigits)
 validate :: Integer -> Bool
 validate x = if mod (sumDigits . doubleEveryOther . toDigits $ x) 10 == 0
     then True
-    else False
-    
+    else False  
+
     
 
 

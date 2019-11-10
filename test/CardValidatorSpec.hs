@@ -22,6 +22,10 @@ spec = do
              sumDigits [4,0,13,14,26,3] `shouldBe` 24
 
     describe "validate" $ do
-        it "returns True if number is valid, False otherwise" $ do
-          004012889888881889 `shouldSatisfy` validate
-          004012889888881888 `shouldNotSatisfy` validate
+        context "when number is divisible by ten" $ do
+           it "returns True if number is valid" $ do
+             004012889888881889 `shouldSatisfy` validate
+        
+        context "when number is not divisible by ten" $ do
+            it "returns False if number is invalid" $ do
+             004012889888881888 `shouldNotSatisfy` validate
